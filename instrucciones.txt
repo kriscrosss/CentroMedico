@@ -1,0 +1,61 @@
+
+Programa que permita administrar las fichas clínicas de una consulta
+médica, para efectos de este programa, debe contemplar tanto médicos como pacientes, para los
+pacientes, debe almacenar su información básica, junto con un registro de los médicos que lo han
+atendido, este registro debe contemplar el nombre del médico y especialidad, fecha de atención,
+diagnóstico y valor de esta, cada vez que visita un médico, sin importar que este lo haya atendido
+antes, se genera este registro, los pacientes se dividirán entre habituales, sobre los cuales se mantiene
+este registro y se contempla adicionalmente la información de su previsión y los pacientes no
+habituales de quienes se debe registrar además de sus datos básicos, un atributo que contemple el
+diagnóstico y último médico que lo atendió, ya que no contemplan el registro indicado anteriormente,
+al momento de crear los pacientes, se debe considerar si es habitual o no habitual, por otra parte
+debe contener a los médicos, de quienes se requiere su información básica, junto con su especialidad,
+dependiendo de la especialidad, algunos médicos solo podrán realizar consultas mientras que otros
+también podrán operar (defina usted que especialidades lo permiten y estas deben estar indicadas
+en un archivo de configuraciones), para efectos de este programa, los médicos que pueden operar
+deben contener un atributo con la cantidad de operaciones realizadas y métodos que permitan
+administrar esta acción, además estos médicos deben contener un atributo con el listado de
+anestesistas y otro con el listado de enfermeras con los que trabaja, estos listados contendrán, al
+menos un objeto persona con datos básicos, al momento de crear cada médico, se debe definir si
+este opera o no y se llena la información, para los listados que se solicitan con enfermeras y
+anestesistas, debe tener previamente en un módulo externo, dos listados con al menos con 20 objetos
+persona cada rol que apoya a los médicos que operan, listo para ser usados en la creación del médico,
+El programa debe crear médicos, crear pacientes, crear el registro de atención, este no se puede crear
+si no hay médicos y pacientes. Su programa debe contemplar todos los elementos necesarios para
+realizar estas actividades, junto con los métodos que permitan mostrar a los pacientes, médicos y
+registro, ya sea todos, o filtrados por al menos un criterio que usted debe definir.
+Su programa debe ser desarrollado bajo el paradigma orientado a objetos, contemplar el manejo de
+excepciones, módulos, paquetes y herencia, antes de programar debe contar con la aprobación de su
+diseño, debe usar la nomenclatura indicada por el docente y aplicar las buenas prácticas que este le
+explicitará, antes de comenzar con el desarrollo, contemple un menú para poder acceder a las
+funcionalidades
+La tabla de evaluación se entregará una vez que cada equipo haya superado la etapa de diseño, los
+estudiantes deben estar presentes en cada clase en la que se desarrolle este laboratorio, de lo
+contrario sufrirán una penalización de 0.5 décimas cada inasistencia injustificada o justificada
+igualmente.
+
+resumen
+considerar pacientes info.basica, registro de medicos que lo han atendido y especialidad (nombre), fecha de atención, diagnostico y valor
+cada vez que se registra se guarda historial
+pacientes divididos en habituales-no habituales
+habituales: datos basicos, registros, prevision
+no habituales: info basica, diagnostico y ultimo medico que lo atendio
+al crear paciente se considera si es habitual o no
+
+medicos info.basica, especialidad (archivo de configuraciones)
+
+medico general
+
+medico especialidad
+
+especialidades
+-Cirugia general
+-Cirugia cardiovascular
+-Cirugia ortopedica
+-Cirugia plastica y reconstructiva
+-Cirugia neurologica
+-Cirugia toracica
+-Cirugia gastrointestinal
+-Cirugia urologica
+-Cirugia de cabeza y cuello
+-Cirugia bariatrica
