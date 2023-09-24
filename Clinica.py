@@ -1,9 +1,9 @@
-from Medico import Medico
-from PacienteHabitual import Paciente_Habitual
-from MedicosEspecialistas import MedicoEspecialista
-from PacienteNoHabitual import Paciente_No_Habitual
+from Personas.Medico import Medico
+from Personas.PacienteHabitual import Paciente_Habitual
+from Personas.MedicosEspecialistas import MedicoEspecialista
+from Personas.PacienteNoHabitual import Paciente_No_Habitual
 from RegistroAtencion import Registro_Atencion
-from Asistentes import Asistentes
+from Personas.Asistentes import Asistentes
  
 class Clinica():
     def __init__(self, nombre, direccion, telefono, listaMedicos, listaAsistentes, listaPacientes):

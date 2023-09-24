@@ -1,0 +1,23 @@
+{
+"EspecialidadesMedicas": {
+    "Cirujia general": true,
+    "Cirugia cardiovascular": true,
+    "Ortopedia": true,
+    "Dermatologia": false,
+    "Cirujia plastica y reconstructiva": true,
+    "Neurocirujano": true,
+    "Cirujia toracica": true,
+    "Cirujia gastrointestinal": true,
+    "Urologo": true,
+    "Oftalmología": false,
+    "Bariatrica": true,
+    "Psiquiatra": false,
+    "Medicina interna": false,
+    "Pediatria":false,
+    "Obstetricia y puericultura": false,
+    "Cardiologia": false,
+    "Neurologia": false,
+    "Otorrinolaringología": false
+
+}
+}
