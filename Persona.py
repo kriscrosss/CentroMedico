@@ -1,4 +1,5 @@
 class Persona():
+
     def __init__(self,nombre,rut,edad,telefono,email):
         self._nombre = nombre 
         self._rut = rut
