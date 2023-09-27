@@ -1,4 +1,5 @@
 from Personas.Persona import Persona
+from ..Validar import validar_rut
 class Paciente_Habitual(Persona):
     def __init__(self, nombre, rut, edad,telefono,email, registro,prevision):
         super().__init__(nombre,rut,edad,telefono,email)
@@ -15,12 +16,18 @@ class Paciente_Habitual(Persona):
     def set_prevision(self, prevision):
         self._prevision = prevision
 
+
     def registrar_paciente():
-        pass
+        nombre = input("Ingrese el nombre del paciente:")
+        rut = validar_rut()
+        edad = input("Ingresa tu edad:")
+        telefono = input("Ingresa tu telefono:")
+        email = input("Ingresa tu email:")
+        registro=input("#########################")
+        prevision= input("Ingresa tu prevision")
 
-    def convertir_paciente_habitual():
-        pass
-
+        return Paciente_Habitual(nombre, rut, edad, telefono, email, registro, prevision)
+    
     def buscar_registro_medico():
         pass
 
@@ -29,10 +36,4 @@ class Paciente_Habitual(Persona):
 
     def __str__(self):
         return super().__str__()+ f"Registro: {self._registro}, Prevision: {self._prevision}" 
-
-
-
-
-
-
 

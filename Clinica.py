@@ -3,8 +3,9 @@ from Personas.PacienteHabitual import Paciente_Habitual
 from Personas.MedicosEspecialistas import MedicoEspecialista
 from Personas.PacienteNoHabitual import Paciente_No_Habitual
 from RegistroAtencion import Registro_Atencion
-from Asistentes import Asistentes
- 
+from Personas.Asistentes import Asistentes
+from Validar import validar_rut
+
 class Clinica():
     def __init__(self):
         self._nombre = "Autónoma"
@@ -16,22 +17,31 @@ class Clinica():
         self._listaPacientesNoHabituales=[]
 
     def crear_paciente(self):
-        nombre = input("Ingrese el nombre del paciente:")
-        rut = verificador_rut()  # Supongo que esto verifica el RUT
-        edad = input("Ingresa tu edad:")
-        telefono = input("Ingresa tu telefono:")
-        email = input("Ingresa tu email:")
-        registro=input("#########################")
-        prevision= input("Ingresa tu prevision")
-        paciente = Paciente_Habitual(nombre, rut, edad, telefono, email, registro, prevision)
+
+        paciente_habitual = input("¿Desea ingresar a un paciente habitual o un paciente nuevo? (s/n)")
+
+        paciente = None
+
+        while paciente_habitual.lower() != "s" and paciente_habitual.lower() != "n":
+            paciente_habitual = input("Intentalo denuevo, debe ingresar s (Sí) o n (No): ")
+            
+        if paciente_habitual.lower() == "s":
+            paciente = Paciente_Habitual.registrar_paciente()
+        else:
+            paciente = Paciente_No_Habitual.registrar_paciente()
+        
+
         self._listaPacientes.append(paciente)
+        
         print("Pacientes registrados:")
+        i = 0
         for paciente in self._listaPacientes:
-            print(paciente)
+            i += 1
+            print(f"{i}.{paciente.get_nombre()}")
 
     def crear_medico(self):
         nombre = input("Ingrese el nombre del médico:")
-        rut = verificador_rut()  # Supongo que esto verifica el RUT
+        rut = validar_rut()  # Supongo que esto verifica el RUT
         edad = input("Ingresa tu edad:")
         telefono = input("Ingresa tu telefono:")
         email = input("Ingresa tu email:")
