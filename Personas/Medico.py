@@ -1,9 +1,9 @@
-from Personas.Trabajador import Trabajador
+from Trabajador import Trabajador
 
 class Medico(Trabajador):
 
-    def __init__(self, nombre, rut, edad, telefono, email, sueldo, horasTrabajadas, fechaIngreso, especialidad):
-            super().__init__(nombre, rut, edad, telefono, email, sueldo, horasTrabajadas, fechaIngreso)
+    def __init__(self, nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso, especialidad):
+            super().__init__(nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso)
             self._especialidad = especialidad
 
     def get_especialidad(self):
