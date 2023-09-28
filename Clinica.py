@@ -3,8 +3,8 @@ from Personas.PacienteHabitual import Paciente_Habitual
 from Personas.MedicosEspecialistas import MedicoEspecialista
 from Personas.PacienteNoHabitual import Paciente_No_Habitual
 from RegistroAtencion import Registro_Atencion
-from Personas.Asistentes import Asistentes
-from Validar import validar_rut
+from Personas.Asistente import Asistente
+from Personas.Validar import validar_rut
 
 class Clinica():
     def __init__(self):

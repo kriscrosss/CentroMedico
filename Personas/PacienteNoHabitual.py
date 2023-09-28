@@ -1,6 +1,5 @@
 from Personas.Persona import Persona
-from ..Validar import validar_rut
-
+from Personas.Validar import validar_rut
 class Paciente_No_Habitual(Persona):
     def __init__(self, nombre, rut, edad, telefono, email,  diagnostico, ultimo_medico):
         super().__init__(nombre, edad, rut, telefono, email)

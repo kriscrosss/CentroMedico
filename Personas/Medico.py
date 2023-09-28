@@ -1,7 +1,7 @@
 # BEGIN: xz4d5f6g7h8j
 
-from .Trabajador import Trabajador
-from ..Validar import validar_rut
+from Personas.Trabajador import Trabajador
+from Personas.Validar import validar_rut
 class Medico(Trabajador):
 
     def __init__(self, nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso, consultas_hechas):

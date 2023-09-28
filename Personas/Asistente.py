@@ -1,6 +1,6 @@
 from Personas.Trabajador import Trabajador
 #enfermer@s y anestesistas
-class Asistentes(Trabajador):
+class Asistente(Trabajador):
     def __init__(self, nombre, rut, edad, telefono, email, sueldo, horasTrabajadas, fechaIngreso, medico_a_cargo, pacientes_atendidos):
         super().__init__(nombre, rut, edad, telefono, email, sueldo, horasTrabajadas, fechaIngreso)
         self._medico_a_cargo = medico_a_cargo

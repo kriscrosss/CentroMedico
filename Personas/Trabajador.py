@@ -1,4 +1,4 @@
-from Persona import Persona 
+from Personas.Persona import Persona 
 
 class Trabajador (Persona):
     def __init__(self, nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso):

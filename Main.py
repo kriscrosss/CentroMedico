@@ -48,7 +48,7 @@ def main_menu():
                 elif subopcion == 5:
                     break
         elif opcion == 0:
-            print("bai")
+            print("Hasta luego!")
             opc = False
 
 main_menu()
