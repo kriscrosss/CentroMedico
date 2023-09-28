@@ -40,20 +40,27 @@ class Clinica():
             print(f"{i}.{paciente.get_nombre()}")
 
     def crear_medico(self):
-        nombre = input("Ingrese el nombre del médico:")
-        rut = validar_rut()  # Supongo que esto verifica el RUT
-        edad = input("Ingresa tu edad:")
-        telefono = input("Ingresa tu telefono:")
-        email = input("Ingresa tu email:")
-        especialidad = input("Ingresa especialidad:")
-        valor_por_hora = input("Ingresa tu valor por hora $:")
-        horasTrabajadas = input("Ingresa tus horas laborales")
-        fechaIngreso = input("Agrega tu fecha de ingreso en formato MM/dd/aaaa:")
-        medico = Medico(nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso, especialidad)
+        medico_especialista = input("¿Desea ingresar a un medico general o un medico especialista? (g/e)")
+
+        medico = None
+
+        while medico_especialista.lower() != "g" and medico_especialista.lower() != "e":
+            medico_especialista = input("Intentalo denuevo, debe ingresar g (General) o e (Especialista): ")
+            
+        if medico_especialista.lower() == "g":
+            medico = Medico.generar_medico()
+        else:
+            medico = MedicoEspecialista.crear_medico_especialista()
+        
+
         self._listaMedicos.append(medico)
-        print("Médicos registrados:")
+        
+        print("Medicos registrados:")
+        i = 0
         for medico in self._listaMedicos:
-            print(medico)
+            i += 1
+            print(f"{i}.{medico.get_nombre()}")
+
 
     def mostrar_pacientes(self):
         print("Lista de pacientes Habituales:")

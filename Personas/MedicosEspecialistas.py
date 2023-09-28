@@ -22,6 +22,19 @@ class MedicoEspecialista (Medico):
 
     def eliminar_asistente():
         pass
+    
+    def crear_medico_especialista():
+        nombre = input("Ingrese el nombre del médico especialista: ")
+        rut = input("Ingrese el RUT del médico especialista: ")
+        edad = int(input("Ingrese la edad del médico especialista: "))
+        telefono = input("Ingrese el teléfono del médico especialista: ")
+        email = input("Ingrese el email del médico especialista: ")
+        sueldo = float(input("Ingrese el sueldo del médico especialista: "))
+        horasTrabajadas = int(input("Ingrese las horas trabajadas del médico especialista: "))
+        fechaIngreso = input("Ingrese la fecha de ingreso del médico especialista (en formato dd/mm/aaaa): ")
+        especialidad = input("Ingrese la especialidad del médico especialista: ")
+        operacionesRealizadas = int(input("Ingrese la cantidad de operaciones realizadas por el médico especialista: "))
+        return MedicoEspecialista(nombre, rut, edad, telefono, email, sueldo, horasTrabajadas, fechaIngreso, especialidad, operacionesRealizadas)
 
     def __str__(self):
         return super().__str__()+f"Operaciones realizadas: {self._operacionesRealizadas}, Asistentes (enfermer@/anestesista): {self._asistentes}" 
