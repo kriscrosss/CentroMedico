@@ -1,7 +1,7 @@
 from Clinica import Clinica
 from Personas.PacienteHabitual import Paciente_Habitual
 from Personas.PacienteNoHabitual import Paciente_No_Habitual
-
+# Prueba
 def main_menu():
     clinica = Clinica()
     opc = True
