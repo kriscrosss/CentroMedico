@@ -23,9 +23,3 @@ asistentes = [
     Asistente("Rocío González", "19.234.567-8", 38, "+56 9 2023 4567", "rocio.gonzalez@example.com", 2100, 44, "2024-08-14", 24)
 ]
 
-# Mostrar la información de los asistentes
-for idx, asistente in enumerate(asistentes, start=1):
-    print(f"Asistente {idx}:")
-    print(f"Nombre: {asistente.nombre}")
-    print
-

@@ -5,6 +5,7 @@ from Personas.PacienteNoHabitual import Paciente_No_Habitual
 from Personas.RegistroAtencion import Registro_Atencion
 from Personas.Asistente import Asistente
 from Personas.Validar import validar_rut
+from asistentes import asistentes
 
 class Clinica():
     def __init__(self):
@@ -12,7 +13,7 @@ class Clinica():
         self._direccion = "Avenida Pedro de Valdivia 311"
         self._telefono = "600 656 0240"
         self._listaMedicos = []
-        self._listaAsistentes = []
+        self._listaAsistentes = asistentes
         self._listaPacientes = []
         self._listaPacientesNoHabituales=[]
 
