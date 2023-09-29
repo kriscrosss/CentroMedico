@@ -1,5 +1,6 @@
 from Personas.Persona import Persona
 from Personas.Validar import validar_rut
+from Personas.RegistroAtencion import Registro_Atencion
 class Paciente_Habitual(Persona):
     def __init__(self, nombre, rut, edad,telefono,email, registro,prevision):
         super().__init__(nombre,rut,edad,telefono,email)
@@ -23,17 +24,24 @@ class Paciente_Habitual(Persona):
         edad = input("Ingresa tu edad:")
         telefono = input("Ingresa tu telefono:")
         email = input("Ingresa tu email:")
-        registro=input("#########################")
+        registro = []
         prevision= input("Ingresa tu prevision")
 
         return Paciente_Habitual(nombre, rut, edad, telefono, email, registro, prevision)
     
-    def buscar_registro_medico():
-        pass
+    def mostrar_historial_medico (self):
+        for i in self.get_registro():
+            print(i, "\n")
 
-    def mostrar_historial_medico ():
-        pass
-
+    def generar_registro(self):
+        fecha = input("Ingrese la fecha de la atención (dd/mm/aaaa): ")
+        hora = input("Ingrese la hora de la atención (hh:mm): ")
+        medico = input("Ingrese el nombre del médico que atendió: ")
+        diagnostico = input("Ingrese el diagnóstico de la atención: ")
+        
+        registro = Registro_Atencion(fecha, hora, medico, diagnostico)
+    
+        self._registro.append(registro)
     def __str__(self):
         return super().__str__()+ f"Registro: {self._registro}, Prevision: {self._prevision}" 
 

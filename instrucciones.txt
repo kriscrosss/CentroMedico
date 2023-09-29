@@ -48,14 +48,4 @@ medico general
 
 medico especialidad
 
-especialidades
--Cirugia general
--Cirugia cardiovascular
--Cirugia ortopedica
--Cirugia plastica y reconstructiva
--Cirugia neurologica
--Cirugia toracica
--Cirugia gastrointestinal
--Cirugia urologica
--Cirugia de cabeza y cuello
--Cirugia bariatrica
+

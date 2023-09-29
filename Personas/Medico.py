@@ -2,6 +2,7 @@
 
 from Personas.Trabajador import Trabajador
 from Personas.Validar import validar_rut
+
 class Medico(Trabajador):
 
     def __init__(self, nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso, consultas_hechas):
@@ -10,6 +11,7 @@ class Medico(Trabajador):
 
     def get_consultas_hechas(self):
         return self._consultas_hechas
+
     def set_consultas_hechas(self,consultas_hechas):
         self._consultas_hechas = consultas_hechas
 
@@ -30,4 +32,8 @@ class Medico(Trabajador):
         fechaIngreso = input("Ingrese la fecha de ingreso del médico: ")
         consultas_hechas = input("Ingrese la consultas hechas del médico: ")
         return Medico(nombre, rut, edad, telefono, email, valor_por_hora, horasTrabajadas, fechaIngreso, consultas_hechas)
+
+    def __str__(self):
+        return f"Nombre: {self._nombre}\nRUT: {self._rut}\nEdad: {self._edad}\nTeléfono: {self._telefono}\nEmail: {self._email}\nValor por hora: {self._valor_por_hora}\nHoras trabajadas: {self._horasTrabajadas}\nFecha de ingreso: {self._fechaIngreso}\nConsultas hechas: {self._consultas_hechas}"
 # END: xz4d5f6g7h8j
+    

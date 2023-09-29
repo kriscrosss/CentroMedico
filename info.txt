@@ -1,0 +1,4 @@
+algunos médicos solo podrán realizar consultas mientras que otros
+también podrán operar (defina usted que especialidades lo permiten y estas deben estar indicadas
+en un archivo de configuraciones)
+

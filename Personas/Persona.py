@@ -34,7 +34,7 @@ class Persona():
         self._email = email
 
     def __str__(self):
-        return f"Nombre: {self._nombre}, RUT: {self._rut}, Edad: {self._edad}, Telefono: {self._telefono}, Email: {self._email}" 
+        return f"Nombre: {self._nombre}\nRUT: {self._rut}\nEdad: {self._edad}\nTelefono: {self._telefono}\nEmail: {self._email}" 
 
 
 

@@ -2,7 +2,7 @@ from Personas.Medico import Medico
 from Personas.PacienteHabitual import Paciente_Habitual
 from Personas.MedicosEspecialistas import MedicoEspecialista
 from Personas.PacienteNoHabitual import Paciente_No_Habitual
-from RegistroAtencion import Registro_Atencion
+from Personas.RegistroAtencion import Registro_Atencion
 from Personas.Asistente import Asistente
 from Personas.Validar import validar_rut
 
@@ -18,24 +18,28 @@ class Clinica():
 
     def crear_paciente(self):
 
-        paciente_habitual = input("¿Desea ingresar a un paciente habitual o un paciente nuevo? (s/n)")
+        paciente_habitual = input("¿Desea ingresar a un paciente habitual o un paciente nuevo? (h/n)")
 
-        paciente = None
-
-        while paciente_habitual.lower() != "s" and paciente_habitual.lower() != "n":
-            paciente_habitual = input("Intentalo denuevo, debe ingresar s (Sí) o n (No): ")
+        while paciente_habitual.lower() != "h" and paciente_habitual.lower() != "n":
+            paciente_habitual = input("Intentalo denuevo, debe ingresar h (Habitual) o n (Nuevo): ")
             
-        if paciente_habitual.lower() == "s":
+        if paciente_habitual.lower() == "h":
             paciente = Paciente_Habitual.registrar_paciente()
+            self._listaPacientes.append(paciente)
         else:
-            paciente = Paciente_No_Habitual.registrar_paciente()
-        
+            paciente = Paciente_No_Habitual.generar_paciente()
+            self._listaPacientesNoHabituales.append(paciente)
 
-        self._listaPacientes.append(paciente)
         
-        print("Pacientes registrados:")
+        print("Pacientes Habituales registrados:")
         i = 0
         for paciente in self._listaPacientes:
+            i += 1
+            print(f"{i}.{paciente.get_nombre()}")
+
+        print("Pacientes No Habituales registrados:")
+        i = 0
+        for paciente in self._listaPacientesNoHabituales:
             i += 1
             print(f"{i}.{paciente.get_nombre()}")
 
@@ -69,37 +73,42 @@ class Clinica():
 
         print("Lista de pacientes No habituales:")
         for paciente in self._listaPacientesNoHabituales:
-            print(f"Nombre:{paciente.nombre}")
+            print(f"Nombre:{paciente._nombre}")
 
     def mostrar_medicos(self):
-        print("Lista de médicos:", self._listaMedicos)
+        print("Lista de médicos:")
         for medico in self._listaMedicos:
-            print("shjad")
+            print(medico)
 
     def busqueda_por_rut(self):
-        rut=input("Ingresa Rut:")
+        rut=input("Ingresa Rut de la persona: ")
+        rut = rut.replace("-", "").replace(".", "")
         encontrado = False
-
+        persona = None
         #busca en la lista de pacientes habituales
         for paciente in self._listaPacientes:
             if paciente.get_rut()==rut:
                 print("Paciente Habitual encontrado:")
                 print(f"Nombre: {paciente.get_nombre()}, Rut: {paciente.get_rut()}")
                 encontrado=True
-
+                persona = paciente
+        
         #busca en la lista de pacientes no habituales
         for paciente in self._listaPacientesNoHabituales:
             if paciente.get_rut()==rut:
-                print("Paciente no habitual encontrado:")
+                print("Paciente No habitual encontrado:")
                 print(f"Nombre: {paciente.get_nombre()}, Rut{paciente.get_rut()}")
                 encontrado = True
-
+                persona = paciente
         #busca en la lista de medico
         for medico in self._listaMedicos:
             if medico.get_rut()==rut:
                 print("Médico encontrado:")
                 print(f"Nombre:{medico.get_nombre()}, Rut: {medico.get_rut()}, Especialidad: {medico.get_especialidad()}" )
                 encontrado= True
+                persona= medico
         
-        if not encontrado:
+        if encontrado:
+            return persona
+        else:
             print(f"No se encontró ningún paciente o médico con el rut: {rut}")

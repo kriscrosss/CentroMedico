@@ -2,7 +2,7 @@ from Personas.Persona import Persona
 from Personas.Validar import validar_rut
 class Paciente_No_Habitual(Persona):
     def __init__(self, nombre, rut, edad, telefono, email,  diagnostico, ultimo_medico):
-        super().__init__(nombre, edad, rut, telefono, email)
+        super().__init__(nombre, rut, edad, telefono, email)
         self._diagnostico = diagnostico
         self._ultimo_medico = ultimo_medico
 
@@ -25,7 +25,6 @@ class Paciente_No_Habitual(Persona):
         diagnostico = input("Ingrese el diagnostico del paciente: ")
         ultimo_medico = input("Ingrese el ultimo medico del paciente: ")
         return Paciente_No_Habitual(nombre, rut, edad, telefono, email, diagnostico, ultimo_medico)
-        
-    
+
     def __str__(self):
-        return super ().__str__()+f"Diagnostico: {self._diagnostico}, Médico: {self._ultimo_medico}" 
+        return super ().__str__()+f"\nDiagnostico: {self._diagnostico}\nMédico: {self._ultimo_medico}" 

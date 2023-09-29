@@ -5,14 +5,18 @@ def calcular_digito_verificador(rut_sin_dv):
         dv = 11 - resto if resto <= 10 else 'K'
         return str(dv)
 
-def validar_rut(rut):
+def validar_rut():
+        rut = input("Ingrese el rut (DEBE SER VALIDO): ")
         rut = rut.replace("-", "").replace(".", "")  # Eliminar guiones y puntos
         rut_sin_dv = rut[:-1]
         dv_ingresado = rut[-1].upper()
 
         dv_calculado = calcular_digito_verificador(rut_sin_dv)
         
-        return dv_ingresado if dv_calculado == dv_ingresado else False 
+        if dv_calculado == dv_ingresado:
+            return rut
+        else:
+             return validar_rut() 
 
 
 def verificador_rut():
