@@ -15,12 +15,6 @@ class Medico(Trabajador):
     def set_consultas_hechas(self,consultas_hechas):
         self._consultas_hechas = consultas_hechas
 
-    def generar_consulta():
-        pass
-
-    def mostrar_consultas():
-         pass
-    
     def generar_medico():
         nombre = input("Ingrese el nombre del médico: ")
         rut = validar_rut()
